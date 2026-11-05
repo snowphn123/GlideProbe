@@ -42,7 +42,7 @@ jobs:
       - name: Build
         run: |
           make clean || true
-          make package FINALPACKAGE=1
+          make FINALPACKAGE=1
 
       - name: Collect artifacts
         run: |
