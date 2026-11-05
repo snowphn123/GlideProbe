@@ -9,6 +9,8 @@ LIBRARY_NAME = GlideProbe
 GlideProbe_FILES = GlideProbe.m
 GlideProbe_FRAMEWORKS = Foundation UIKit
 GlideProbe_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unused-function
-GlideProbe_LDFLAGS = -undefined dynamic_lookup
+
+# 关键修改：加入 -Wl,-headerpad_max_install_names 预留签名空间
+GlideProbe_LDFLAGS = -undefined dynamic_lookup -Wl,-headerpad_max_install_names
 
 include $(THEOS_MAKE_PATH)/library.mk
